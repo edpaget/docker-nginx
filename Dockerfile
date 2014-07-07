@@ -4,9 +4,7 @@
 FROM ubuntu:12.04
 MAINTAINER Edward Paget <ed@zooniverse.org>
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 RUN apt-get update 
-RUN apt-get upgrade -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-software-properties
 RUN add-apt-repository ppa:nginx/stable
 
