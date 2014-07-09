@@ -15,12 +15,11 @@ RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 RUN mkdir -p /var/log/supervisor
 
 RUN rm /etc/nginx/sites-enabled/default
-ADD storm_ui.conf /etc/nginx/sites-enabled/storm_ui.conf
-ADD events.conf /etc/nginx/sites-enabled/events.conf
+ADD storm_ui.conf /etc/nginx/sites-enabled/storm_ui
+ADD events.conf /etc/nginx/sites-enabled/events
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 WORKDIR /etc/nginx
 
 EXPOSE 80
 
-CMD ["/usr/bin/supervisord"]
